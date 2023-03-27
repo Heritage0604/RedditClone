@@ -8,7 +8,7 @@ import AuthInputs from './AuthInputs'
 import OauthButton from './OauthButton'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '@/firebase/ClientApp'
-import {ResetPassword} from "../Auth/ResetPassword"
+
 
 type Props = {}
 
@@ -50,7 +50,7 @@ useEffect(()=>{
      <AuthInputs/>
      </>
  
-): <ResetPassword/>}
+): ""}
      
       
        </Flex>
