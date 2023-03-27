@@ -160,7 +160,7 @@ router.push(`r/${communityName}`)
           </Box>
 
           <ModalFooter bg="gray.100" borderRadius="0px 0px 10px 10px">
-            <Button variant="outline" height="30px" mr={3} colorScheme='blue' mr={3} onClick={handleClose} >
+            <Button variant="outline" height="30px" mr={3} colorScheme='blue'  onClick={handleClose} >
               Cancel
             </Button>
             <Button height="30px" onClick={handleCreateCommunity} isLoading={loading} >Create Community</Button>
