@@ -223,7 +223,7 @@ const newComment={
                     userId={user?.uid}
                   />
                 ))}
-              </>
+              </> 
             ) : (
               <Flex
                 direction="column"
