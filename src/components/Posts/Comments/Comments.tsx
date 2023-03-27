@@ -86,7 +86,7 @@ const newComment={
         creatorId: user.uid,
         CreatorDisplayText: user.email!.split("@")[0],
         creatorPhotoURL: user.photoURL!,
-        communityId: communityId!,
+       
         text: commentText,
         postTitle: selectedPost?.title!,
         createdAt: serverTimestamp() as Timestamp,
