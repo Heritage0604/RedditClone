@@ -43,7 +43,6 @@ export type Comment={
     id:string
     creatorId:string
     CreatorDisplayText:string
-    communityId:string
     postId:string
     postTitle:string
     text:string
