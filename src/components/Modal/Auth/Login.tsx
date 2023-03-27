@@ -36,7 +36,7 @@ const [
   }))
  }
   return (
-<form autoComplete='off'>
+<form autoComplete='off' onSubmit={onSubmit}>
 <Input required type="email" name="email" placeholder='email'
  mb={2} onChange={onChange} 
  fontSize={"10pt"}
@@ -56,7 +56,7 @@ const [
   <Text textAlign={"center"} color="red" fontSize={"10pt"} mb={2}>{FIREBASE_ERRORS[error?.message as keyof typeof FIREBASE_ERRORS]}</Text>
 
 
-<Button type="submit" width={"100%"} height={"36px"} onClick={onSubmit} isLoading={loading} mb={3}>Log In</Button>
+<Button type="submit" width={"100%"} height={"36px"}  isLoading={loading} mb={3}>Log In</Button>
 
 <Flex justify={"center"} mb={2} fontSize="9pt">
   <Text mr={2}>Forgot Password?</Text>
