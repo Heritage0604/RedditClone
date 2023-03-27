@@ -193,7 +193,7 @@ const newComment={
   };
 
   useEffect(() => {
-    console.log("HERE IS SELECTED POST", selectedPost.id);
+    console.log("HERE IS SELECTED POST", selectedPost?.id);
 
     getPostComment();
   }, []);
