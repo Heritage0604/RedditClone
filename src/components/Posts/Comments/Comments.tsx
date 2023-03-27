@@ -177,7 +177,7 @@ const newComment={
     try {
       const commentsQuery = query(
         collection(firestore, "comments"),
-        where("postId", "==", selectedPost.id),
+        where("postId", "==", selectedPost?.id),
         orderBy("createdAt", "desc")
       );
       const commentDocs = await getDocs(commentsQuery);
