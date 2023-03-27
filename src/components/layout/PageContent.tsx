@@ -1,9 +1,12 @@
 import { Flex } from '@chakra-ui/react'
 import React from 'react'
 
-type Props = {}
+type Props = {
+  children:any
+}
 
-const PageContent = ({children}) => {
+const PageContent:React.FC<Props> = ({children}) => {
+    
     
   return (
     <Flex justify={"center"} padding={"16px 0px"} >
