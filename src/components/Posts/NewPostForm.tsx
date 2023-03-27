@@ -70,12 +70,12 @@ export type Tabitem={
   title:string,
   icon:typeof Icon.arguments
 }
-type Props={
+type NewPostFormProps={
    user:User
    communityImageURL?:string
 }
 
-const NewPostForm:React.FC<Props> = ({user,communityImageURL}) => {
+const NewPostForm: React.FC<NewPostFormProps> = ({user,communityImageURL}) => {
   const Data=["Option","Option","Option","Option"]
   const router=useRouter()
   const[loading,setLoading]=useState(false)
