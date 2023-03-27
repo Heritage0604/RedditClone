@@ -7,7 +7,7 @@ import {auth} from "../../../firebase/ClientApp"
 import { useSetRecoilState } from "recoil";
 
 type ResetPasswordProps = {
-  toggleView: (view: ModalView) => void;
+  toggleView: (view: any) => void;
 };
 
 const ResetPassword: React.FC<ResetPasswordProps> = ({ toggleView }) => {
