@@ -114,9 +114,7 @@ const NewPostForm:React.FC<Props> = ({user,communityImageURL}) => {
 
 
     const AddInput=()=>{
-        if(addOptions.length >=0){
-            const length=addOptions.length
-setAddOptions((arr:string[])=>([...arr,Data[length]]))
+ 
 
 return
 }
