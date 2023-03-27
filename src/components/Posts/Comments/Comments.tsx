@@ -47,7 +47,7 @@ export type Comment={
     id:string
     creatorId:string
     CreatorDisplayText:string
-    communityId:string
+    communityId?:string
     postId:string
     postTitle:string
     text:string
@@ -62,7 +62,7 @@ const[commentText,setCommentText]=useState("")
  const router = useRouter();
    const{communityId}=router.query
   
-const[comments,setComments]=useState([])
+const[comments,setComments]=useState<Comment[]>([])
 const[fetchLoading,setFetchLoading]=useState(false)
 const[createLoading,setCreateLoading]=useState(false)
 const setAuthModalState = useSetRecoilState(authModalState);
@@ -106,10 +106,21 @@ const newComment={
       setCommentText("");
     //   const { id: postId, title } = selectedPost;
 
-     setComments((prev:any)=>[
-        newComment,
-        ...prev
-     ])
+   
+  
+    setComments((prev) => [
+        {
+            id:commentDocRef.id,
+        postId: selectedPost?.id!,
+        creatorId: user.uid,
+        CreatorDisplayText: user.email!.split("@")[0],
+        creatorPhotoURL: user.photoURL!,
+        text: commentText,
+        postTitle: selectedPost?.title!,
+        createdAt: serverTimestamp() as Timestamp,
+        } as Comment,
+        ...prev,
+      ]);
 
       // Fetch posts again to update number of comments
       setPostState((prev) => ({
