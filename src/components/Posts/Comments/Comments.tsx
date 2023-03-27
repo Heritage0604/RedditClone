@@ -80,7 +80,7 @@ const onCreateComment=async()=>{
       const batch = writeBatch(firestore);
       const commentDocRef = doc(collection(firestore, "comments"));
 
-const newComment:Comment={
+const newComment={
         id:commentDocRef.id,
         postId: selectedPost?.id!,
         creatorId: user.uid,
