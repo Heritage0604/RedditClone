@@ -62,7 +62,7 @@ const[commentText,setCommentText]=useState("")
  const router = useRouter();
    const{communityId}=router.query
   
-const[comments,setComments]=useState<Comment[]>([])
+const[comments,setComments]=useState([])
 const[fetchLoading,setFetchLoading]=useState(false)
 const[createLoading,setCreateLoading]=useState(false)
 const setAuthModalState = useSetRecoilState(authModalState);
