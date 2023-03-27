@@ -106,7 +106,7 @@ const newComment={
       setCommentText("");
     //   const { id: postId, title } = selectedPost;
 
-     setComments((prev)=>[
+     setComments((prev:any)=>[
         newComment,
         ...prev
      ])
