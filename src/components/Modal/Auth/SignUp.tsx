@@ -90,7 +90,7 @@ if(userCred){
 <Input required type="password" name="confirmpassword" placeholder='confirm password' mb={5} onChange={onChange}/>
 </InputGroup>
 {(error || userError )&& (
-  <Text textAlign={"center"} color="red" fontSize={"10pt"} mb={2}>{error || FIREBASE_ERRORS[userError.message as keyof typeof FIREBASE_ERRORS]}</Text>
+  <Text textAlign={"center"} color="red" fontSize={"10pt"} mb={2}>{error || FIREBASE_ERRORS[userError?.message as keyof typeof FIREBASE_ERRORS]}</Text>
 )}
 <Button type="submit" width={"100%"} height={"36px"}  mb={3} isLoading={loading}>Sign Up</Button>
 
