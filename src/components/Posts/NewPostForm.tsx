@@ -72,10 +72,7 @@ export type Tabitem={
   title:string,
   icon:typeof Icon.arguments
 }
-type NewPostFormProps={
-   user:User
-   communityImageURL?:string
-}
+
 
 const NewPostForm = () => {
  
