@@ -149,7 +149,7 @@ const handleCreatePost =async()=>{
      voteStatus:0,
      createdAt:serverTimestamp()  as Timestamp,
       linktitle:linkInputs?.title ? linkInputs.title :"",
-      link:linkInputs?.body ? linkInputs.body :"",
+      link:linkInputs?.body ? linkInputs.body :"", 
   }
   setLoading(true)
   try{
