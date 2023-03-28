@@ -87,8 +87,7 @@ const NewPostForm = () => {
   const [addOptions,setAddOptions]=useState([])
   const [audioSrc,setAudioSrc]=useState("")
   const recorderControls = useAudioRecorder()
-   const {communityStateValue}=useCommunityData()
-   const communityImageURL=communityStateValue.currentCommunity?.imageURL
+
   const[selectedTab,setSelectedTab]=useState(formTabs[0].title)
   const[textInputs,setTextInputs]=useState({
     title:"",
@@ -136,6 +135,8 @@ const DeleteInput=()=>{
 const handleCreatePost =async()=>{
     const router=useRouter()
    const{communityId}=router.query
+      const {communityStateValue}=useCommunityData()
+   const communityImageURL=communityStateValue.currentCommunity?.imageURL
   const newPost:Post={
     communityId:communityId as string,
     communityImageURL:communityImageURL||"",
