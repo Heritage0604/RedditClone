@@ -35,12 +35,14 @@ import TabItem from "./TabItem";
 import TextInput from "./PostForm/TextInput";
 import ImageUpload from "./PostForm/ImageUpload";
 import { Post } from "@/atoms/PostAtom";
-import { firestore,storage } from "@/firebase/ClientApp";
+import { firestore,storage,auth } from "@/firebase/ClientApp";
 import LinkInput from "./PostForm/LinkInput";
 import PollForm from "./PostForm/PollForm";
 import AudoInput from "./PostForm/AudoInput";
 import { AudioRecorder, useAudioRecorder } from 'react-audio-voice-recorder';
 import useSelectFile from "@/Hooks/useSelectFile";
+import { useAuthState } from 'react-firebase-hooks/auth'
+import useCommunityData from '@/Hooks/useCommunityData'
 
 
 const formTabs :Tabitem[] = [
@@ -75,14 +77,17 @@ type NewPostFormProps={
    communityImageURL?:string
 }
 
-const NewPostForm: React.FC<NewPostFormProps> = ({user,communityImageURL}) => {
+const NewPostForm = () => {
   const Data=["Option","Option","Option","Option"]
+    const [user]=useAuthState(auth)
   const router=useRouter()
   const[loading,setLoading]=useState(false)
   const[error,setError]=useState(false)
   const [addOptions,setAddOptions]=useState([])
   const [audioSrc,setAudioSrc]=useState("")
   const recorderControls = useAudioRecorder()
+   const {communityStateValue}=useCommunityData()
+   const communityImageURL=communityStateValue.currentCommunity?.imageURL
   const[selectedTab,setSelectedTab]=useState(formTabs[0].title)
   const[textInputs,setTextInputs]=useState({
     title:"",
