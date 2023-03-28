@@ -80,7 +80,7 @@ type NewPostFormProps={
 const NewPostForm = () => {
  
   const Data=["Option","Option","Option","Option"]
-   const [user]=useAuthState(auth)
+   
 
   const[loading,setLoading]=useState(false)
   const[error,setError]=useState(false)
@@ -133,6 +133,7 @@ const DeleteInput=()=>{
 }
 
 const handleCreatePost =async()=>{
+  const [user]=useAuthState(auth)
     const router=useRouter()
    const{communityId}=router.query
       const {communityStateValue}=useCommunityData()
