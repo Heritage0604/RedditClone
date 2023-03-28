@@ -130,15 +130,17 @@ const DeleteInput=()=>{
 }
 
 const handleCreatePost =async()=>{
-    const router=useRouter()
+  const [user]=useAuthState(auth)
+     if(user){
+const router=useRouter()
    const{communityId}=router.query
       const {communityStateValue}=useCommunityData()
    const communityImageURL=communityStateValue.currentCommunity?.imageURL
-    const [user]=useAuthState(auth)
+    
   const newPost:Post={
     communityId:communityId as string,
     communityImageURL:communityImageURL||"",
-    creatorId:{user? user?.uid:""},
+    creatorId:user?.uid,
     creatorDisplayName:user.email!.split("@")[0],
     title:textInputs.title,
     body:textInputs.body,
@@ -172,6 +174,10 @@ router.back()
     console.log("handle create post error",error)
   }
   setLoading(false)
+  }
+  else{
+    return
+  }
 };
 
 const onTextChange=(event:React.ChangeEvent<HTMLInputElement| HTMLTextAreaElement>)=>{
