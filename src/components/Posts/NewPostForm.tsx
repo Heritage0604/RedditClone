@@ -133,11 +133,11 @@ const DeleteInput=()=>{
 }
 
 const handleCreatePost =async()=>{
-  const [user]=useAuthState(auth)
     const router=useRouter()
    const{communityId}=router.query
       const {communityStateValue}=useCommunityData()
    const communityImageURL=communityStateValue.currentCommunity?.imageURL
+    const [user]=useAuthState(auth)
   const newPost:Post={
     communityId:communityId as string,
     communityImageURL:communityImageURL||"",
