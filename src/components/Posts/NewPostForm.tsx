@@ -129,11 +129,7 @@ return
 }
 
 const DeleteInput=()=>{
-        const items = addOptions;
-      if (items.length > 0) {
-          const lastIndex = items.length - 1;
-          setAddOptions(items.filter((item, index) => index !== lastIndex));
-      }
+    return
 }
 
 const handleCreatePost =async()=>{
